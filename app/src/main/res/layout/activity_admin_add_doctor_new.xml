@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.faisal.supermom.AdminAddDoctorActivityNew">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="Add Doctor Info"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorPrimaryDark"
+
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/textView14"
+        android:layout_margin="10dp"
+        android:id="@+id/doctorName"
+        >
+
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Name : "
+
+            />
+
+        <EditText
+            android:id="@+id/addDoctorNameID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="doctor name"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/doctorName"
+        android:layout_margin="10dp"
+        android:id="@+id/doctorHospital"
+        >
+
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Hospital : " />
+
+        <EditText
+            android:id="@+id/addDoctorHospitalID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hospital"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/doctorHospital"
+        android:layout_margin="10dp"
+        android:id="@+id/avalibility"
+        >
+
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Availibility : " />
+
+        <EditText
+            android:id="@+id/addDoctorAvailibilityID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="availibility"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/avalibility"
+        android:layout_margin="10dp"
+        android:id="@+id/specializedIn"
+        >
+
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Specialized In : " />
+
+        <EditText
+            android:id="@+id/addDoctorSpecializedID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="specialized"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/specializedIn"
+        android:layout_margin="10dp"
+        android:id="@+id/contactNo"
+        >
+
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Contact No : " />
+
+        <EditText
+            android:id="@+id/addDoctorContactID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="contact no"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/processUploadImageForDoctorID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/contactNo"
+        android:layout_below="@+id/contactNo"
+        android:text="Select image from gallery" />
+
+    <Button
+        android:id="@+id/saveDoctorInfoToFirebaseBtnID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contactNo"
+        android:layout_alignEnd="@+id/contactNo"
+        android:text="Add info" />
+
+    <TextView
+        android:id="@+id/goToUpdateDoctorInfoID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/processUploadImageForDoctorID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="go to update doctor info idTextView"
+        />
+
+
+
+
+</RelativeLayout>

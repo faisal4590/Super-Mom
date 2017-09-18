@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_beAnAwesomeMom" android:title="@string/awesome_mom"
+        android:icon="@mipmap/ic_pregnant_woman_black_24dp"
+        />
+    <item android:id="@+id/nav_remainder" android:title="@string/remainder"
+        android:icon="@mipmap/ic_add_alert_black_24dp"
+        />
+
+    <item android:id="@+id/nav_healthMonitor" android:title="@string/healthMonitor"
+        android:icon="@mipmap/ic_favorite_black_24dp"
+        />
+
+    <item android:id="@+id/nav_ourSpecialist" android:title="@string/ourSpecialist"
+        android:icon="@mipmap/ic_record_voice_over_black_24dp"
+        />
+
+    <item android:id="@+id/nav_babyProduct" android:title="@string/babyProduct"
+        android:icon="@mipmap/ic_view_list_black_24dp"
+        />
+
+    <item android:id="@+id/nav_aboutUs" android:title="@string/aboutUs"
+        android:icon="@mipmap/ic_announcement_black_24dp"
+        />
+
+    <item android:id="@+id/nav_logout" android:title="Logout"
+        android:icon="@mipmap/ic_power_settings_new_black_24dp"
+        />
+
+</menu>

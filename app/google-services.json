@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "993142277143",
+    "firebase_url": "https://super-mom.firebaseio.com",
+    "project_id": "super-mom",
+    "storage_bucket": "super-mom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993142277143:android:3a40685e212bddc7",
+        "android_client_info": {
+          "package_name": "com.faisal.supermom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993142277143-l37ojq2rv04d8qb1kef9fgdm31vmc8i1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.faisal.supermom",
+            "certificate_hash": "b7c763ae2f94d06ff2c0227a9b6d99cdff04c60f"
+          }
+        },
+        {
+          "client_id": "993142277143-o7dm993ecg6kd0r1p6mmc3rt6d4rjf2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjLzTrnjCRAWgPj9B5u5PF9Hn7Qcz-QV0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993142277143-o7dm993ecg6kd0r1p6mmc3rt6d4rjf2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

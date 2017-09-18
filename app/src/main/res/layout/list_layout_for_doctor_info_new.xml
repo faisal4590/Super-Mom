@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/showDoctorNameAreaID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="TextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="96dp" />
+
+    <TextView
+        android:id="@+id/showDoctorHospitalAreaID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/showDoctorNameAreaID"
+        android:layout_below="@+id/showDoctorNameAreaID"
+        android:layout_marginTop="34dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/showDoctorAvailibilityAreaID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/showDoctorHospitalAreaID"
+        android:layout_below="@+id/showDoctorHospitalAreaID"
+        android:layout_marginTop="38dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/showDoctorContactAreaID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/showDoctorAvailibilityAreaID"
+        android:layout_below="@+id/showDoctorAvailibilityAreaID"
+        android:layout_marginTop="39dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/showDoctorSpecializedAreaID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/showDoctorContactAreaID"
+        android:layout_below="@+id/showDoctorContactAreaID"
+        android:layout_marginTop="36dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/showDoctorHospitalAreaID"
+        android:layout_alignParentStart="true"
+        android:text="Doctor Name : " />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/showDoctorHospitalAreaID"
+        android:text="Hospital : " />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/showDoctorContactAreaID"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView26"
+        android:layout_alignParentStart="true"
+        android:text="Avalibility : " />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/showDoctorSpecializedAreaID"
+        android:layout_alignParentStart="true"
+        android:text="Contact No : " />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/showDoctorSpecializedAreaID"
+        android:layout_alignParentStart="true"
+        android:text="Specialist : " />
+</RelativeLayout>

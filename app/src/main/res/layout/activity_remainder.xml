@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.faisal.supermom.RemainderActivity">
+
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="@string/remainder_string"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+
+
+        />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="53dp"
+        android:layout_toStartOf="@+id/textView9"
+        android:text="@string/vaccine_due"
+
+        android:textSize="16dp"
+        />
+
+    <TextView
+        android:id="@+id/vaccineDueInfoID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_toEndOf="@+id/textView10"
+        android:text="@string/vaccine_due_info"
+
+        />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_below="@+id/textView10"
+        android:layout_marginTop="44dp"
+        android:text="@string/available_vaccine_center" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView12"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/textView12"
+        android:text="@string/info_about_available_vaccine_center"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewMenuID"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_below="@+id/textView13"
+        >
+
+        <TextView
+            android:id="@+id/goToBeAnAwesomeMomPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Newsfeed"
+            android:padding="10dp"
+            android:textAlignment="center"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+
+
+
+            />
+
+        <TextView
+            android:id="@+id/goToHealthMonitorID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health Monitor"
+            android:textAlignment="center"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+
+            />
+
+        <TextView
+            android:id="@+id/goToRemainderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remainder"
+            android:textAlignment="center"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/textViewMenuID"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/goToOurSpecialistPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Specialists"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+
+            android:padding="10dp"
+
+            />
+
+
+
+        <TextView
+            android:id="@+id/goToAboutUsPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.faisal.supermom.AdminAddBabyInfoActivity">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="@string/newsfeed"
+        android:padding="5dp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/infoHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="@string/addInformationHeadline"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:padding="5dp"
+        android:textAlignment="center"
+
+        />
+
+    <EditText
+        android:id="@+id/addInformationHeadlineID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:hint="@string/add_headline"
+        android:layout_alignBaseline="@+id/infoHeadline"
+        android:layout_alignBottom="@+id/infoHeadline"
+        android:layout_toEndOf="@+id/infoHeadline"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/addInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addInformationHeadlineID"
+        android:layout_marginTop="65dp"
+        android:text="@string/add_info" />
+
+    <EditText
+        android:id="@+id/addInformationID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/addInfo"
+        android:layout_toEndOf="@+id/infoHeadline"
+        android:layout_alignStart="@+id/addInformationHeadlineID"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/add_information"
+
+         />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addInformationID"
+        android:id="@+id/btnBrowseImageID"
+        android:text="select image from gallery"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/btnBrowseImageID"
+        android:id="@+id/adminShowImageWhenPickedID"
+
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/adminGiveImageNameID"
+        android:layout_below="@+id/adminShowImageWhenPickedID"
+        android:hint="add image name"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adminGiveImageNameID"
+        android:text="Save"
+        android:id="@+id/processSaveBabyInfoBtnID"
+        />
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/processSaveBabyInfoBtnID"
+        android:id="@+id/menuForAdminID"
+        >
+
+        <TextView
+            android:id="@+id/goToAddDoctorInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Doctor Info"
+
+            android:layout_below="@+id/processSaveBabyInfoBtnID"
+            android:background="@drawable/button_circle_radius"
+            android:padding="10dp"
+            android:textColor="#ffff"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/goToUpdateNewsfeedInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update newsfeed"
+            android:background="@drawable/button_circle_radius"
+            android:padding="10dp"
+            android:textColor="#ffff"
+            android:textStyle="bold"
+
+            />
+
+
+    </LinearLayout>
+
+
+
+    <ListView
+        android:id="@+id/showBabyInfoListID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/menuForAdminID"
+        android:layout_centerHorizontal="true"
+
+
+        />
+
+
+</RelativeLayout>

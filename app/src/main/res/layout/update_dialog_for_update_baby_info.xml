@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/updateArtistNameLayoutID"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update headline : "
+            android:textSize="18sp"
+            android:id="@+id/artistNameTextViewID"
+
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="update artist name"
+            android:textAlignment="center"
+            android:id="@+id/updateBabyHeadlineID"
+
+            />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/updateArtistNameLayoutID"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update info : "
+            android:textSize="18sp"
+
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="update baby info"
+            android:textAlignment="center"
+            android:id="@+id/updateBabyInfoID"
+
+            />
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout"
+        android:id="@+id/updateNewsfeedImageLayoutID"
+        >
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateNewsfeedImageURLID"
+            android:hint="enter a new image url"
+            android:textAlignment="center"
+
+            />
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/updateNewsfeedImageLayoutID"
+        android:id="@+id/updateImageNameLayoutID"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="update image name"
+            android:textAlignment="center"
+            android:id="@+id/updateNewsfeedImageNameID"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/processUpdateNewsfeedInfoBtnID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/updateImageNameLayoutID"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"
+        android:text="Update"
+
+        />
+
+
+
+</RelativeLayout>

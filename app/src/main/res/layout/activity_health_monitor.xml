@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.faisal.supermom.HealthMonitorActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/healthMonitorHeadlineID"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/child_info"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textStyle="bold"
+
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/healthMonitorChildAgeID"
+        android:layout_below="@+id/healthMonitorHeadlineID"
+        android:layout_marginBottom="10dp"
+        >
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/child_age"
+            android:textColor="#E38067"
+            android:textSize="16sp"
+            />
+
+        <EditText
+            android:id="@+id/enterChildAgeForHealthMonitorID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/input_child_age"
+            android:layout_marginLeft="25dp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/healthMonitorChildHeightID"
+        android:layout_below="@+id/healthMonitorChildAgeID"
+        android:layout_marginBottom="10dp"
+        >
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Child Height : "
+            android:textColor="#E38067"
+            android:textSize="16sp"
+
+            />
+
+        <EditText
+            android:id="@+id/enterChildHeightForHealthMonitorID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/enter_child_height"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/healthMonitorChildWeightID"
+        android:layout_below="@+id/healthMonitorChildHeightID"
+        android:layout_marginBottom="10dp"
+        >
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Child Weight : "
+
+            android:textColor="#E38067"
+            android:textSize="16sp"
+            />
+
+
+        <EditText
+            android:id="@+id/enterChildWeightFOrHealthMonitorID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="textPersonName"
+            android:hint="@string/enter_child_weight"
+
+
+
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/healthMonitorChildGenderID"
+        android:layout_below="@+id/healthMonitorChildWeightID"
+        android:layout_marginBottom="10dp"
+        >
+
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Child Gender"
+
+            android:textColor="#E38067"
+            android:textSize="16sp"
+            />
+
+        <Spinner
+            android:id="@+id/enterChildGenderForHealthMonitorID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:entries="@array/genderChoser"
+            android:textAlignment="center"
+            />
+    </LinearLayout>
+
+
+
+
+
+
+    <Button
+        android:id="@+id/showHealthReportForHealthMonitorID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/healthMonitorChildWeightID"
+        android:layout_marginTop="28dp"
+        android:text="@string/show_health_report"
+        android:background="@drawable/button_circle_radius"
+        android:textColor="#ffff"
+        android:padding="10dp"
+
+
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewMenuID"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_below="@+id/showHealthReportForHealthMonitorID"
+        >
+
+        <TextView
+            android:id="@+id/goToBeAnAwesomeMomPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Newsfeed"
+            android:padding="10dp"
+            android:textAlignment="center"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+
+
+
+            />
+
+        <TextView
+            android:id="@+id/goToHealthMonitorID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health Monitor"
+            android:textAlignment="center"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+
+            />
+
+        <TextView
+            android:id="@+id/goToRemainderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remainder"
+            android:textAlignment="center"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/textViewMenuID"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/goToOurSpecialistPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Specialists"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+
+            android:padding="10dp"
+
+            />
+
+
+
+        <TextView
+            android:id="@+id/goToAboutUsPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

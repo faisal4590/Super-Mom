@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.faisal.supermom.OurSpecialistActivity">
+
+
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="Our Specialists"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewMenuID"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_below="@+id/textView3"
+        >
+
+        <TextView
+            android:id="@+id/goToBeAnAwesomeMomPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Newsfeed"
+            android:padding="10dp"
+            android:textAlignment="center"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+
+
+
+            />
+
+        <TextView
+            android:id="@+id/goToHealthMonitorID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health Monitor"
+            android:textAlignment="center"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+
+            />
+
+        <TextView
+            android:id="@+id/goToRemainderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remainder"
+            android:textAlignment="center"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/textViewMenuID"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/goToOurSpecialistPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Specialists"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+
+            android:padding="10dp"
+
+            />
+
+
+
+        <TextView
+            android:id="@+id/goToAboutUsPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+
+            android:background="#08AFA7"
+            android:textColor="#fff"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            />
+    </LinearLayout>
+
+
+
+    <ListView
+        android:id="@+id/showDoctorInfoListID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textViewMenuID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" />
+
+
+
+</RelativeLayout>

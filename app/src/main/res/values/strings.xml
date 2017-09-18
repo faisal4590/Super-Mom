@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Super Mom</string>
+    <string name="enter_your_email">enter your email</string>
+    <string name="password">password</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="awesome_mom">Be An Awesome Mom</string>
+    <string name="remainder">Remainder</string>
+    <string name="healthMonitor">Health Monitor</string>
+    <string name="ourSpecialist">Our Specialists</string>
+    <string name="babyProduct">Baby\'s Product</string>
+    <string name="aboutUs">About Us</string>
+    <string name="birthdayPicker">Choose your baby\'s birthdate</string>
+    <string name="newsfeed">Newsfeed</string>
+    <string name="addInformationHeadline">Add information headline : </string>
+    <string name="add_headline">add headline</string>
+    <string name="add_info">Add Information :</string>
+    <string name="add_information">add some info</string>
+
+    <!--Doctor info-->
+    <string name="doctorname">Doctor Name </string>
+    <string name="hospital">Hospital Name</string>
+    <string name="SUBMIT">Add Information</string>
+    <string name="Speciaist">Speciality </string>
+    <string name="abailability">Abailable </string>
+    <string name="ContactNo">Contact No</string>
+
+    <!--Healthmonitor defined strings-->
+    <string name="child_info">Your Child Information</string>
+    <string name="child_age">Child Age     :</string>
+    <string name="input_child_age">enter your child\'s age</string>
+    <string name="enter_child_height">enter your child\'s height</string>
+    <string name="enter_child_weight">enter your child\'s weight</string>
+    <string name="show_health_report">Show health report</string>
+    <string name="remainder_string">Remainder</string>
+    <string name="vaccine_due">Vaccine Due :</string>
+    <string name="vaccine_due_info">information about vaccine vaccine_due</string>
+    <string name="available_vaccine_center">Available Vaccine Center :</string>
+    <string name="info_about_available_vaccine_center">info about available vaccine center</string>
+    <array name="genderChoser">
+        <item name="male">Male</item>
+        <item name="female">Female</item>
+    </array>
+
+
+    <string name="doctorInfoShow">Available Doctor</string>
+    <string name="our_specialists">Our Specialists List</string>
+    <string name="title_activity_new_about_us">Map</string>
+
+
+</resources>
