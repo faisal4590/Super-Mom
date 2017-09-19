@@ -2,6 +2,10 @@ package com.faisal.supermom;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -20,11 +24,17 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 import static android.R.attr.value;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
     private Button signUpBtn;
-    private EditText email, password,username,confirmPassword;
+    private EditText email, password,username;
     private TextView alreadyAccount;
+    private Sensor accelerometer;
+    private SensorManager sm;
+    double SHAKE_THRESHOLD = 800;
+    long lastTime;
+    float lastx, lasty, lastz;
+
 
     private ProgressDialog  progressDialog;
 
@@ -34,6 +44,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sm = (SensorManager)getSystemService(SENSOR_SERVICE);
+        accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sm.registerListener(this,accelerometer,SensorManager.SENSOR_DELAY_NORMAL);
 
         progressDialog = new ProgressDialog(this);//each time a user signs up, we need a progress dialog. thats why we defined the object here
 
@@ -51,12 +65,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         email = (EditText) findViewById(R.id.emailID);
         password = (EditText) findViewById(R.id.passwordID);
         username= (EditText)findViewById(R.id.username);
-        confirmPassword = (EditText) findViewById(R.id.confirmPasswordID);
 
         alreadyAccount = (TextView) findViewById(R.id.alreadyAccount);
 
-        signUpBtn.setOnClickListener(this);//same class er moddhei.. tai this pathalam
-        alreadyAccount.setOnClickListener(this);
+        signUpBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                registerUser();
+
+            }
+        });//same class er moddhei.. tai this pathalam
+        alreadyAccount.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent in = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(in);
+            }
+        });
 
     }
 
@@ -66,7 +89,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String emailStr = email.getText().toString().trim();
         String passwordStr = password.getText().toString().trim();
-        String confirmPasswordStr = confirmPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(emailStr)) {
             //checking wheather the email is empty or not
@@ -88,51 +110,73 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
-        if (!passwordStr.equals(confirmPasswordStr)){
-            Toast.makeText(this, "password did not match", Toast.LENGTH_LONG).show();
-            return;
-        }
-
         progressDialog.setMessage("Registering user..");
         progressDialog.show();
 
         firebaseAuth.createUserWithEmailAndPassword(emailStr,passwordStr)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            //registration korar por ja korbo
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    //registration is successful
-                    //redirect to login page
-                    finish();
-                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-                }
-                else if (task.getException() instanceof FirebaseAuthUserCollisionException){
-                    Toast.makeText(MainActivity.this, "Email already exists!", Toast.LENGTH_LONG).show();
-                    progressDialog.hide();
-                    return;
-                }
-                else{
-                    Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-                    myIntent.putExtra("key", value); //Optional parameters
-                    startActivity(myIntent);
+                    //registration korar por ja korbo
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            //registration is successful
+                            //redirect to login page
+                            finish();
+                            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                        }
+                        else if (task.getException() instanceof FirebaseAuthUserCollisionException){
+                            Toast.makeText(MainActivity.this, "Email already exists!", Toast.LENGTH_LONG).show();
+                            progressDialog.hide();
+                            return;
+                        }
+                        else{
+                            Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+                            myIntent.putExtra("key", value); //Optional parameters
+                            startActivity(myIntent);
 
-                    Toast.makeText(MainActivity.this,"Registration failed, please try again",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this,"Registration failed, please try again",Toast.LENGTH_SHORT).show();
 
-                }
-            }
-        });
+                        }
+                    }
+                });
 
     }
 
     @Override
-    public void onClick(View view) {
-        if (view == signUpBtn) {
-            registerUser();
+    public void onSensorChanged(SensorEvent sensorEvent) {
+
+        Sensor sensor = sensorEvent.sensor;
+        if (sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            float x = sensorEvent.values[0];
+            float y = sensorEvent.values[1];
+            float z = sensorEvent.values[2];
+            long curTime = System.currentTimeMillis();
+
+            if ((curTime - lastTime) > 100) {
+                long diffTime = (curTime - lastTime);
+
+                lastTime = curTime;
+                double speed = Math.abs(x - lastx + y - lasty + z - lastx) / diffTime * 10000;
+
+                if (speed > SHAKE_THRESHOLD) {
+                    Intent in = new Intent(this, LoginActivity.class);
+                    startActivity(in);
+                }
+                lastx = x;
+                lasty = y;
+                lastz = z;
+
+            }
         }
-        if (view == alreadyAccount) {
-            //will open login activity
-            startActivity(new Intent(this,LoginActivity.class));
-        }
+
+
     }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+
+
 }
