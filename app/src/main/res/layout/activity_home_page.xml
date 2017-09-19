@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.HomePageActivity"
     android:id="@+id/drawerLayout"
-    android:background="#FFF3E0"
+    android:background="@drawable/homepage_bg2"
     >
 
 
@@ -24,7 +24,10 @@
             android:padding="10dp"
             android:text="Welcome"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="30dp"
+            android:textColor="@color/colorwhite"
+            android:fontFamily="cursive"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
 
             />
 

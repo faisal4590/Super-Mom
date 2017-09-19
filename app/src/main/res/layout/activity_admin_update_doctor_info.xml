@@ -4,13 +4,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.faisal.supermom.AdminUpdateDoctorInfoActivity">
+    tools:context="com.faisal.supermom.AdminUpdateDoctorInfoActivity"
+
+    android:background="@drawable/admin_update_doctor_bg"
+
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/menuForAdminID"
+        android:layout_marginTop="5dp"
+        >
+
+        <TextView
+            android:id="@+id/goToAddNewsfeedInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Newsfeed info"
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            android:layout_marginLeft="50dp"
+
+            />
+
+        <TextView
+            android:id="@+id/goToAddDoctorInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Doctor Info"
+
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            android:layout_marginLeft="50dp"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:id="@+id/menuForAdmin2ID"
+        android:layout_below="@+id/menuForAdminID"
+        android:layout_marginTop="5dp"
+
+
+        >
+
+        <TextView
+            android:id="@+id/goToUpdateNewsfeedInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update newsfeed"
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            android:layout_marginLeft="50dp"
+
+            />
+
+
+        <TextView
+            android:id="@+id/goToUpdateDoctorInfoID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Doctor"
+
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:layout_marginLeft="60dp"
+
+
+            />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/menuForAdmin2ID"
+        android:layout_marginTop="10dp"
+        android:id="@+id/textNewsfeed"
+
+
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Update Newsfeed"
+            android:textColor="@color/colorwhite"
+            android:textAlignment="center"
+            android:fontFamily="cursive"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            />
+
+
+    </LinearLayout>
+
 
 
     <ListView
         android:id="@+id/showDoctorInfoListViewID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
+        android:layout_below="@+id/textNewsfeed"
         />
 
 

@@ -1,5 +1,6 @@
 package com.faisal.supermom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,11 +33,49 @@ public class AdminUpdateNewsfeedActivity extends AppCompatActivity {
 
     List<NewNewsfeedClass> newNewsfeedClassList;
 
+    //next page links//
+    private TextView goToUpdateNewsfeedInfoPage, goToAddDoctorInfo, goToAddNewsfeedInfo, goToUpdateDoctorInfo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_update_newsfeed);
+
+
+        //go to next page code starts//
+        goToAddDoctorInfo = (TextView) findViewById(R.id.goToAddDoctorInfoPageID);
+        goToAddNewsfeedInfo = (TextView) findViewById(R.id.goToAddNewsfeedInfoPageID);
+        goToUpdateNewsfeedInfoPage = (TextView) findViewById(R.id.goToUpdateNewsfeedInfoPageID);
+        goToUpdateDoctorInfo = (TextView) findViewById(R.id.goToUpdateDoctorInfoID);
+
+        goToAddDoctorInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AdminAddDoctorActivityNew.class));
+            }
+        });
+        goToAddNewsfeedInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AdminAddBabyInfoActivity.class));
+            }
+        });
+        goToUpdateDoctorInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AdminUpdateDoctorInfoActivity.class));
+            }
+        });
+
+        goToUpdateNewsfeedInfoPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AdminUpdateNewsfeedActivity.class));
+            }
+        });
+
+        //go to next page code ends//
 
 
         //database reference

@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.faisal.supermom.RemainderActivity">
+    tools:context="com.faisal.supermom.RemainderActivity"
+
+    android:background="@drawable/reminder_bg"
+
+    >
 
 
     <TextView
@@ -18,6 +22,8 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="cursive"
+        android:textSize="40dp"
 
 
         />
@@ -32,7 +38,7 @@
         android:layout_toStartOf="@+id/textView9"
         android:text="@string/vaccine_due"
 
-        android:textSize="16dp"
+        android:textSize="20dp"
         />
 
     <TextView
@@ -43,6 +49,8 @@
         android:layout_toEndOf="@+id/textView10"
         android:text="@string/vaccine_due_info"
 
+        android:textSize="20dp"
+
         />
 
     <TextView
@@ -52,7 +60,10 @@
         android:layout_alignStart="@+id/textView10"
         android:layout_below="@+id/textView10"
         android:layout_marginTop="44dp"
-        android:text="@string/available_vaccine_center" />
+        android:text="@string/available_vaccine_center"
+        android:textSize="20dp"
+
+        />
 
     <TextView
         android:id="@+id/textView13"
@@ -62,6 +73,9 @@
         android:layout_marginStart="30dp"
         android:layout_toEndOf="@+id/textView12"
         android:text="@string/info_about_available_vaccine_center"
+        android:textSize="20dp"
+
+
 
         />
 

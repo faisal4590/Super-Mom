@@ -27,7 +27,7 @@ import static android.R.attr.value;
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
     private Button signUpBtn;
-    private EditText email, password,username;
+    private EditText email, password,username,confirmPassword;
     private TextView alreadyAccount;
     private Sensor accelerometer;
     private SensorManager sm;
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         signUpBtn = (Button) findViewById(R.id.signUpBtn);
         email = (EditText) findViewById(R.id.emailID);
         password = (EditText) findViewById(R.id.passwordID);
+        confirmPassword = (EditText) findViewById(R.id.confirmPasswordID);
         username= (EditText)findViewById(R.id.username);
 
         alreadyAccount = (TextView) findViewById(R.id.alreadyAccount);
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         String emailStr = email.getText().toString().trim();
         String passwordStr = password.getText().toString().trim();
+        String confirmPasswordStr = confirmPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(emailStr)) {
             //checking wheather the email is empty or not
@@ -106,6 +108,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (passwordStr.length() < 5) {
             //length must be greater than 5
             Toast.makeText(this, "password must be greater than 5 characters", Toast.LENGTH_LONG).show();
+            return;
+
+        }
+
+        if (!passwordStr.equals(confirmPasswordStr)) {
+            //length must be greater than 5
+            Toast.makeText(this, "password did not match", Toast.LENGTH_LONG).show();
             return;
 
         }

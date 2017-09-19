@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -80,10 +81,14 @@ public class AdminAddBabyInfoActivity extends AppCompatActivity {
 
     ProgressDialog progressDialog;
 
+    private FirebaseAuth firebaseAuth;
+
     //add image variable ends
 
     //next page links//
-    private TextView goToUpdateNewsfeedInfoPage,goToAddDoctorInfo;
+    private TextView goToUpdateNewsfeedInfoPage,goToAddDoctorInfo,goToAddNewsfeedInfo,goToUpdateDoctorInfo;
+
+    private TextView btnLogOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,15 +125,43 @@ public class AdminAddBabyInfoActivity extends AppCompatActivity {
         });*/
 
 
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        btnLogOut = (TextView) findViewById(R.id.logOut);
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                finish();//finishing the current activity
+
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+            }
+        });
+
 
         //go to next page code starts//
         goToAddDoctorInfo = (TextView)findViewById(R.id.goToAddDoctorInfoPageID);
+        goToAddNewsfeedInfo = (TextView)findViewById(R.id.goToAddNewsfeedInfoPageID);
         goToUpdateNewsfeedInfoPage = (TextView)findViewById(R.id.goToUpdateNewsfeedInfoPageID);
+        goToUpdateDoctorInfo = (TextView)findViewById(R.id.goToUpdateDoctorInfoID);
 
         goToAddDoctorInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),AdminAddDoctorActivityNew.class));
+            }
+        });
+        goToAddNewsfeedInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AdminAddBabyInfoActivity.class));
+            }
+        });
+        goToUpdateDoctorInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AdminUpdateDoctorInfoActivity.class));
             }
         });
 

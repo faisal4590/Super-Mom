@@ -26,8 +26,8 @@ import java.util.List;
 
 public class AdminAddDoctorActivityNew extends AppCompatActivity {
 
-    EditText doctorNameEditText,doctorHospitalEditText,doctorAvailibilityEditText,
-    doctorSpecializedEditText,doctorContactEditText;
+    EditText doctorNameEditText, doctorHospitalEditText, doctorAvailibilityEditText,
+            doctorSpecializedEditText, doctorContactEditText;
 
     Button saveDoctorInfoToFirebaseBtn;
 
@@ -47,35 +47,65 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
 
     StorageReference mStorage;
 
-    private static final int GALLERY_INTENT=2;
+    private static final int GALLERY_INTENT = 2;
 
     private ProgressDialog mProgressDiaglog;
+
+    //next page links//
+    //next page links//
+    private TextView goToUpdateNewsfeedInfoPage, goToAddDoctorInfo, goToAddNewsfeedInfo, goToUpdateDoctorInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_doctor_new);
 
-        goToUpdateDoctorInfoPage = (TextView)findViewById(R.id.goToUpdateDoctorInfoID);
 
-        goToUpdateDoctorInfoPage.setOnClickListener(new View.OnClickListener() {
+        //go to next page code starts//
+        goToAddDoctorInfo = (TextView) findViewById(R.id.goToAddDoctorInfoPageID);
+        goToAddNewsfeedInfo = (TextView) findViewById(R.id.goToAddNewsfeedInfoPageID);
+        goToUpdateNewsfeedInfoPage = (TextView) findViewById(R.id.goToUpdateNewsfeedInfoPageID);
+        goToUpdateDoctorInfo = (TextView) findViewById(R.id.goToUpdateDoctorInfoID);
+
+        goToAddDoctorInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                startActivity(new Intent(getApplicationContext(), AdminAddDoctorActivityNew.class));
+            }
+        });
+        goToAddNewsfeedInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AdminAddBabyInfoActivity.class));
+            }
+        });
+        goToUpdateDoctorInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), AdminUpdateDoctorInfoActivity.class));
             }
         });
 
+        goToUpdateNewsfeedInfoPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AdminUpdateNewsfeedActivity.class));
+            }
+        });
+
+        //go to next page code ends//
+
+
         //database reference
         databaseReferenceDoctorInfo = FirebaseDatabase.getInstance().getReference("doctorInfoNew");
 
-        doctorAvailibilityEditText = (EditText)findViewById(R.id.addDoctorAvailibilityID);
-        doctorContactEditText = (EditText)findViewById(R.id.addDoctorContactID);
-        doctorHospitalEditText = (EditText)findViewById(R.id.addDoctorHospitalID);
-        doctorNameEditText = (EditText)findViewById(R.id.addDoctorNameID);
-        doctorSpecializedEditText = (EditText)findViewById(R.id.addDoctorSpecializedID);
+        doctorAvailibilityEditText = (EditText) findViewById(R.id.addDoctorAvailibilityID);
+        doctorContactEditText = (EditText) findViewById(R.id.addDoctorContactID);
+        doctorHospitalEditText = (EditText) findViewById(R.id.addDoctorHospitalID);
+        doctorNameEditText = (EditText) findViewById(R.id.addDoctorNameID);
+        doctorSpecializedEditText = (EditText) findViewById(R.id.addDoctorSpecializedID);
 
-        saveDoctorInfoToFirebaseBtn = (Button)findViewById(R.id.saveDoctorInfoToFirebaseBtnID);
+        saveDoctorInfoToFirebaseBtn = (Button) findViewById(R.id.saveDoctorInfoToFirebaseBtnID);
 
         saveDoctorInfoToFirebaseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +119,7 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
 
         mStorage = FirebaseStorage.getInstance().getReference();
 
-        processAddImageBtn = (Button)findViewById(R.id.processUploadImageForDoctorID);
+        processAddImageBtn = (Button) findViewById(R.id.processUploadImageForDoctorID);
 
 
         mProgressDiaglog = new ProgressDialog(this);
@@ -100,10 +130,9 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
             public void onClick(View v) {
 
 
-
                 Intent intent = new Intent(Intent.ACTION_PICK);//jekono kisu pick korar jonno intent
                 intent.setType("image/*");//image chara ar kono datatype ami select korte chaina..
-                startActivityForResult(intent,GALLERY_INTENT);
+                startActivityForResult(intent, GALLERY_INTENT);
 
 
             }
@@ -112,13 +141,11 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
         //code for upload image to database ends
 
 
-
-
     }
 
-    private void addDoctorInfo(){
-        String doctorNameStr,doctorHospitalStr,
-                doctorAvalibilityStr,doctorSpecializedStr,doctorContactStr,doctorIDStr;
+    private void addDoctorInfo() {
+        String doctorNameStr, doctorHospitalStr,
+                doctorAvalibilityStr, doctorSpecializedStr, doctorContactStr, doctorIDStr;
 
         doctorNameStr = doctorNameEditText.getText().toString();
         doctorHospitalStr = doctorHospitalEditText.getText().toString();
@@ -126,22 +153,20 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
         doctorSpecializedStr = doctorSpecializedEditText.getText().toString();
         doctorContactStr = doctorContactEditText.getText().toString();
 
-        if(TextUtils.isEmpty(doctorAvalibilityStr) || TextUtils.isEmpty(doctorContactStr) ||
+        if (TextUtils.isEmpty(doctorAvalibilityStr) || TextUtils.isEmpty(doctorContactStr) ||
                 TextUtils.isEmpty(doctorHospitalStr) ||
                 TextUtils.isEmpty(doctorNameStr) ||
-                TextUtils.isEmpty(doctorSpecializedStr) ){
-            Toast.makeText(getApplicationContext(),"Please fill up the field",Toast.LENGTH_SHORT).show();
-        }
-
-        else{
+                TextUtils.isEmpty(doctorSpecializedStr)) {
+            Toast.makeText(getApplicationContext(), "Please fill up the field", Toast.LENGTH_SHORT).show();
+        } else {
             String doctorIDVarNew = databaseReferenceDoctorInfo.push().getKey();
 
-            DoctorClassNew doctorInfoObjNew = new DoctorClassNew(doctorIDVarNew,doctorNameStr,
-                    doctorHospitalStr,doctorSpecializedStr,doctorAvalibilityStr,doctorContactStr);
+            DoctorClassNew doctorInfoObjNew = new DoctorClassNew(doctorIDVarNew, doctorNameStr,
+                    doctorHospitalStr, doctorSpecializedStr, doctorAvalibilityStr, doctorContactStr);
 
             databaseReferenceDoctorInfo.child(doctorIDVarNew).setValue(doctorInfoObjNew);
 
-            Toast.makeText(getApplicationContext(),"Doctor Info added",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Doctor Info added", Toast.LENGTH_LONG).show();
 
         }
     }
@@ -153,8 +178,7 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
 
-
-        if(requestCode == GALLERY_INTENT && resultCode == RESULT_OK){
+        if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK) {
 
             mProgressDiaglog.setMessage("Uploading image...");
             mProgressDiaglog.show();
@@ -168,7 +192,7 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     //image thikmoto upload hole then ei code execute hobe
 
-                    Toast.makeText(getApplicationContext(),"Image uploaded",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Image uploaded", Toast.LENGTH_SHORT).show();
                     mProgressDiaglog.dismiss();
 
 
@@ -176,7 +200,7 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(getApplicationContext(),"Image upload failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Image upload failed", Toast.LENGTH_SHORT).show();
                     mProgressDiaglog.dismiss();
                 }
             });
@@ -184,7 +208,6 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
         }
 
     }
-
 
 
 }

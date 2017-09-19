@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#8B96B6"
+
+
+
     >
 
     <TextView
@@ -34,9 +36,11 @@
         android:textAlignment="textEnd"
         android:id="@+id/showNewsfeedImageNameID"
         android:layout_marginTop="5dp"
-        android:textStyle="italic"
+        android:fontFamily="cursive"
         android:layout_margin="5dp"
         android:textColor="#fff"
+        android:textSize="20sp"
+
         />
 
     <TextView

@@ -10,7 +10,11 @@
         android:text="TextView"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="96dp" />
+        android:layout_marginEnd="96dp"
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+        />
 
     <TextView
         android:id="@+id/showDoctorHospitalAreaID"
@@ -19,7 +23,12 @@
         android:layout_alignStart="@+id/showDoctorNameAreaID"
         android:layout_below="@+id/showDoctorNameAreaID"
         android:layout_marginTop="34dp"
-        android:text="TextView" />
+        android:text="TextView"
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+
+        />
 
     <TextView
         android:id="@+id/showDoctorAvailibilityAreaID"
@@ -28,7 +37,12 @@
         android:layout_alignStart="@+id/showDoctorHospitalAreaID"
         android:layout_below="@+id/showDoctorHospitalAreaID"
         android:layout_marginTop="38dp"
-        android:text="TextView" />
+        android:text="TextView"
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+
+        />
 
     <TextView
         android:id="@+id/showDoctorContactAreaID"
@@ -37,7 +51,12 @@
         android:layout_alignStart="@+id/showDoctorAvailibilityAreaID"
         android:layout_below="@+id/showDoctorAvailibilityAreaID"
         android:layout_marginTop="39dp"
-        android:text="TextView" />
+        android:text="TextView"
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+
+        />
 
     <TextView
         android:id="@+id/showDoctorSpecializedAreaID"
@@ -46,7 +65,12 @@
         android:layout_alignStart="@+id/showDoctorContactAreaID"
         android:layout_below="@+id/showDoctorContactAreaID"
         android:layout_marginTop="36dp"
-        android:text="TextView" />
+        android:text="TextView"
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+
+        />
 
     <TextView
         android:id="@+id/textView24"
@@ -54,7 +78,12 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/showDoctorHospitalAreaID"
         android:layout_alignParentStart="true"
-        android:text="Doctor Name : " />
+        android:text="Doctor Name : "
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+
+        />
 
     <TextView
         android:id="@+id/textView25"
@@ -62,14 +91,24 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/showDoctorHospitalAreaID"
-        android:text="Hospital : " />
+        android:text="Hospital : "
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+
+        />
 
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/showDoctorContactAreaID"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+
+        />
 
     <TextView
         android:id="@+id/textView27"
@@ -77,7 +116,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView26"
         android:layout_alignParentStart="true"
-        android:text="Avalibility : " />
+        android:text="Specialists : "
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+
+        />
 
     <TextView
         android:id="@+id/textView28"
@@ -85,13 +129,24 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/showDoctorSpecializedAreaID"
         android:layout_alignParentStart="true"
-        android:text="Contact No : " />
+        android:text="Contact No : "
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+
+        />
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/showDoctorSpecializedAreaID"
+        android:layout_below="@+id/textView28"
         android:layout_alignParentStart="true"
-        android:text="Specialist : " />
+        android:text="Availibility : "
+
+        android:textSize="18dp"
+        android:textColor="@color/colorwhite"
+        android:layout_marginTop="35dp"
+
+        />
 </RelativeLayout>

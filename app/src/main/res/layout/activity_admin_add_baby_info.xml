@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.faisal.supermom.AdminAddBabyInfoActivity">
+    tools:context="com.faisal.supermom.AdminAddBabyInfoActivity"
+
+    android:background="@drawable/admin_newsfeed_bg"
+
+    >
 
 
     <TextView
@@ -17,18 +21,27 @@
         android:text="@string/newsfeed"
         android:padding="5dp"
         android:textAlignment="center"
+        android:fontFamily="cursive"
+        android:textColor="@color/colorwhite"
+        android:textSize="40dp"
+        android:textStyle="bold"
         />
 
     <TextView
         android:id="@+id/infoHeadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="15dp"
         android:text="@string/addInformationHeadline"
         android:layout_below="@+id/textView2"
         android:layout_alignParentStart="true"
         android:padding="5dp"
         android:textAlignment="center"
+
+        android:textColor="@color/colororange1"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+
 
         />
 
@@ -36,12 +49,14 @@
         android:id="@+id/addInformationHeadlineID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
+        android:layout_marginStart="15dp"
         android:hint="@string/add_headline"
         android:layout_alignBaseline="@+id/infoHeadline"
         android:layout_alignBottom="@+id/infoHeadline"
         android:layout_toEndOf="@+id/infoHeadline"
         android:padding="5dp"
+        android:textColor="@color/colorwhite"
+        android:textColorHint="@color/colorwhite"
         />
 
     <TextView
@@ -49,21 +64,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/addInformationHeadlineID"
-        android:layout_marginTop="65dp"
-        android:text="@string/add_info" />
+        android:layout_below="@+id/infoHeadline"
+        android:layout_marginTop="15dp"
+        android:text="@string/add_info"
+
+        android:textColor="@color/colororange1"
+        android:textStyle="bold"
+
+        />
 
     <EditText
         android:id="@+id/addInformationID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/addInfo"
-        android:layout_toEndOf="@+id/infoHeadline"
+        android:layout_below="@+id/addInformationHeadlineID"
         android:layout_alignStart="@+id/addInformationHeadlineID"
-        android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/add_information"
 
+        android:textColor="@color/colorwhite"
+        android:textColorHint="@color/colorwhite"
          />
 
 
@@ -75,16 +95,20 @@
         android:text="select image from gallery"
         android:layout_marginTop="10dp"
 
+        android:background="@drawable/button_circle_radius"
+        android:alpha=".7"
+        android:textColor="@color/colorwhite"
+
         />
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_below="@+id/btnBrowseImageID"
+        android:layout_height="60dp"
         android:id="@+id/adminShowImageWhenPickedID"
 
 
-        />
+        android:layout_below="@+id/btnBrowseImageID"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -93,6 +117,9 @@
         android:layout_below="@+id/adminShowImageWhenPickedID"
         android:hint="add image name"
         android:textAlignment="center"
+
+        android:textColor="@color/colorwhite"
+        android:textColorHint="@color/colorwhite"
         />
 
     <Button
@@ -101,7 +128,14 @@
         android:layout_below="@+id/adminGiveImageNameID"
         android:text="Save"
         android:id="@+id/processSaveBabyInfoBtnID"
+
+        android:background="@drawable/button_circle_radius"
+        android:alpha=".7"
+        android:textColor="@color/colorwhite"
+
+
         />
+
 
 
 
@@ -113,7 +147,25 @@
         android:orientation="horizontal"
         android:layout_below="@+id/processSaveBabyInfoBtnID"
         android:id="@+id/menuForAdminID"
+        android:layout_marginTop="5dp"
         >
+
+        <TextView
+            android:id="@+id/goToAddNewsfeedInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Newsfeed info"
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            android:layout_marginLeft="50dp"
+
+            />
 
         <TextView
             android:id="@+id/goToAddDoctorInfoPageID"
@@ -121,23 +173,15 @@
             android:layout_height="wrap_content"
             android:text="Add Doctor Info"
 
-            android:layout_below="@+id/processSaveBabyInfoBtnID"
-            android:background="@drawable/button_circle_radius"
-            android:padding="10dp"
-            android:textColor="#ffff"
-            android:textStyle="bold"
 
-            />
 
-        <TextView
-            android:id="@+id/goToUpdateNewsfeedInfoPageID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Update newsfeed"
-            android:background="@drawable/button_circle_radius"
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
             android:padding="10dp"
-            android:textColor="#ffff"
             android:textStyle="bold"
+            android:textSize="14dp"
+
+            android:layout_marginLeft="50dp"
 
             />
 
@@ -145,15 +189,78 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:id="@+id/menuForAdmin2ID"
+        android:layout_marginTop="3dp"
+
+
+        android:layout_below="@+id/menuForAdminID"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="36dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/goToUpdateNewsfeedInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update newsfeed"
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            android:layout_marginLeft="50dp"
+
+            />
+
+
+        <TextView
+            android:id="@+id/goToUpdateDoctorInfoID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+
+
+            android:background="#DE5448"
+            android:padding="10dp"
+            android:text="Update Doctor"
+            android:textColor="@color/colorwhite"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
 
     <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/menuForAdmin2ID"
         android:id="@+id/showBabyInfoListID"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/menuForAdminID"
-        android:layout_centerHorizontal="true"
+        >
 
 
+    </ListView>
+
+    <TextView
+        android:id="@+id/logOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView2"
+        android:text="Logout"
+
+        android:textColor="@color/colorwhite"
+        android:background="@drawable/button_circle_radius"
+        android:padding="8dp"
         />
 
 

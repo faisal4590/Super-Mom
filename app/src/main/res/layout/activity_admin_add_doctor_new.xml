@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.faisal.supermom.AdminAddDoctorActivityNew">
+    tools:context="com.faisal.supermom.AdminAddDoctorActivityNew"
+
+    android:background="@drawable/admin_add_doctor_bg"
+
+    >
 
     <TextView
         android:id="@+id/textView14"
@@ -16,6 +20,10 @@
         android:text="Add Doctor Info"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textColor="@color/colorPrimaryDark"
+
+        android:textSize="40dp"
+        android:fontFamily="cursive"
+
 
         />
 
@@ -170,9 +178,16 @@
         android:id="@+id/processUploadImageForDoctorID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/contactNo"
+        android:text="Select image from gallery"
         android:layout_below="@+id/contactNo"
-        android:text="Select image from gallery" />
+        android:layout_alignParentStart="true"
+
+        android:background="@drawable/button_circle_radius"
+        android:textColor="@color/colorwhite"
+        android:padding="3dp"
+
+
+        />
 
     <Button
         android:id="@+id/saveDoctorInfoToFirebaseBtnID"
@@ -180,17 +195,116 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/contactNo"
         android:layout_alignEnd="@+id/contactNo"
-        android:text="Add info" />
+        android:text="Add info"
 
-    <TextView
-        android:id="@+id/goToUpdateDoctorInfoID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/processUploadImageForDoctorID"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="go to update doctor info idTextView"
+        android:background="@drawable/button_circle_radius"
+        android:textColor="@color/colorwhite"
+        android:padding="5dp"
+
         />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/processUploadImageForDoctorID"
+        android:id="@+id/menuForAdminID"
+        android:layout_marginTop="5dp"
+        >
+
+        <TextView
+            android:id="@+id/goToAddNewsfeedInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Newsfeed info"
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            android:layout_marginLeft="50dp"
+
+            />
+
+        <TextView
+            android:id="@+id/goToAddDoctorInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Doctor Info"
+
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            android:layout_marginLeft="50dp"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:id="@+id/menuForAdmin2ID"
+        android:layout_below="@+id/menuForAdminID"
+        android:layout_marginTop="5dp"
+
+
+        >
+
+        <TextView
+            android:id="@+id/goToUpdateNewsfeedInfoPageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update newsfeed"
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+
+            android:layout_marginLeft="50dp"
+
+            />
+
+
+        <TextView
+            android:id="@+id/goToUpdateDoctorInfoID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Doctor"
+
+
+
+            android:background="#DE5448"
+            android:textColor="@color/colorwhite"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:layout_marginLeft="60dp"
+
+
+            />
+
+
+
+    </LinearLayout>
+
 
 
 

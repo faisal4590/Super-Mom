@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.LoginActivity"
-    android:background="#424242"
+    android:background="@drawable/login2_bg"
     >
 
     <TextView
@@ -13,13 +13,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:textSize="40dp"
+        android:textSize="60dp"
         android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="27dp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         android:textColor="#81BCFF"
+
+        android:fontFamily="cursive"
+
         />
 
     <LinearLayout
@@ -40,8 +43,8 @@
             android:id="@+id/emailIDSignIn"
             android:inputType="textEmailAddress"
             android:textAlignment="center"
-            android:textColorHint="#ffff"
-            android:textColor="#ffff"
+            android:textColorHint="#29B6F6"
+            android:textColor="#29B6F6"
             />
         <EditText
             android:layout_margin="10dp"
@@ -51,8 +54,8 @@
             android:id="@+id/passwordIDSignIn"
             android:textAlignment="center"
             android:inputType="textPassword"
-            android:textColorHint="#ffff"
-            android:textColor="#ffff"
+            android:textColorHint="#29B6F6"
+            android:textColor="#29B6F6"
             />
 
         <Button

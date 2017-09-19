@@ -5,20 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.MainActivity"
-    android:background="#424242"
+    android:background="@drawable/sign_up_bg1"
+
     >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@+id/mainScreenImageID"
-            />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_centerHorizontal="true"
@@ -29,21 +18,6 @@
         android:id="@+id/linearLayout2"
 
         >
-
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:textSize="40dp"
-            android:layout_above="@+id/linearLayout"
-            android:textAlignment="center"
-            android:textColor="#FF8A65"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textStyle="bold"
-
-            />
 
 
         <EditText
@@ -58,7 +32,10 @@
             android:textAlignment="center"
             android:textStyle="italic"
             android:textColor="#ffff"
-            android:textColorHint="#00E676"
+            android:textColorHint="#fff"
+            android:fontFamily="cursive"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textSize="30sp"
             />
 
         <EditText
@@ -71,7 +48,10 @@
             android:textAlignment="center"
             android:textStyle="italic"
             android:textColor="#ffff"
-            android:textColorHint="#00E676"
+            android:textColorHint="#fff"
+            android:fontFamily="cursive"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textSize="30sp"
             />
         <EditText
             android:layout_margin="10dp"
@@ -83,7 +63,10 @@
             android:inputType="textPassword"
             android:textStyle="italic"
             android:textColor="#ffff"
-            android:textColorHint="#00E676"
+            android:textColorHint="#fff"
+            android:fontFamily="cursive"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textSize="30sp"
             />
 
         <EditText
@@ -96,7 +79,10 @@
             android:inputType="textPassword"
             android:textStyle="italic"
             android:textColor="#ffff"
-            android:textColorHint="#00E676"
+            android:textColorHint="#fff"
+            android:fontFamily="cursive"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textSize="30sp"
 
             />
 
@@ -122,7 +108,7 @@
             android:textAlignment="center"
             android:layout_margin="10dp"
             android:id="@+id/alreadyAccount"
-            android:textColor="#AEA5A8"
+            android:textColor="@color/colorwhite"
             />
     </LinearLayout>
 

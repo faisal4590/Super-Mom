@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.faisal.supermom.HealthMonitorActivity">
+    tools:context="com.faisal.supermom.HealthMonitorActivity"
+    android:background="@drawable/health_monitor_bg"
+
+    >
 
 
     <LinearLayout
@@ -24,6 +27,9 @@
             android:textColor="@color/colorPrimaryDark"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:textStyle="bold"
+
+            android:fontFamily="cursive"
+            android:textSize="30dp"
 
             />
 
@@ -46,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/child_age"
-            android:textColor="#E38067"
+            android:textColor="#FFE793"
             android:textSize="16sp"
             />
 
@@ -77,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Child Height : "
-            android:textColor="#E38067"
+            android:textColor="#FFE793"
             android:textSize="16sp"
 
             />
@@ -109,7 +115,7 @@
 
             android:text="Child Weight : "
 
-            android:textColor="#E38067"
+            android:textColor="#FFE793"
             android:textSize="16sp"
             />
 
@@ -145,7 +151,7 @@
             android:layout_height="wrap_content"
             android:text="Child Gender"
 
-            android:textColor="#E38067"
+            android:textColor="#FFE793"
             android:textSize="16sp"
             />
 
