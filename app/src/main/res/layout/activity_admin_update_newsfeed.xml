@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.AdminUpdateNewsfeedActivity"
 
-    android:background="@drawable/update_newsfeed_bg"
+    android:background="@drawable/update_newsfeed_bg1"
 
     >
 

@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class HomePageActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,12 +44,18 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
     int year,month,day;
     static final int DIALOG_ID=0;
 
+    //database reference
+    DatabaseReference databaseBabyInfoReference;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        //database ref..
+        databaseBabyInfoReference = FirebaseDatabase.getInstance().getReference("babyInfo");
 
         //page links
         beAnAweosmeMomPage = (TextView) findViewById(R.id.goToBeAnAwesomeMomPageID);

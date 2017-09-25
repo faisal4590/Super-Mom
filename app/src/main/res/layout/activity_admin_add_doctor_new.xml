@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.AdminAddDoctorActivityNew"
 
-    android:background="@drawable/admin_add_doctor_bg"
+    android:background="@drawable/admin_add_doctor_bg1"
 
     >
 
