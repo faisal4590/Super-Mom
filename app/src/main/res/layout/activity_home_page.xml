@@ -13,7 +13,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/layout1">
 
 
         <TextView
@@ -44,6 +45,8 @@
 
     </android.support.design.widget.NavigationView>
 
+
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -52,6 +55,20 @@
         tools:context="com.faisal.supermom.HomePageActivity"
         android:gravity="center_vertical"
         >
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/newBabyNameEditTextID"
+            android:hint="enter your baby name"
+            android:textColorHint="@color/colorwhite"
+            android:textAlignment="center"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorwhite"
+            />
+
+
 
 
         <Button
@@ -68,6 +85,8 @@
 
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:layout_marginTop="70dp"
+
             />
 
 
@@ -93,112 +112,11 @@
 
             />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewMenuID"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:layout_below="@+id/logOut"
-            >
-
-            <TextView
-                android:id="@+id/goToBeAnAwesomeMomPageID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Newsfeed"
-                android:padding="10dp"
-                android:textAlignment="center"
-
-                android:background="#08AFA7"
-                android:textColor="#fff"
-
-
-
-                />
-
-            <TextView
-                android:id="@+id/goToHealthMonitorID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health Monitor"
-                android:textAlignment="center"
-
-                android:background="#08AFA7"
-                android:textColor="#fff"
-                android:layout_marginLeft="5dp"
-                android:padding="10dp"
-
-                />
-
-            <TextView
-                android:id="@+id/goToRemainderID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Remainder"
-                android:textAlignment="center"
-
-                android:background="#08AFA7"
-                android:textColor="#fff"
-                android:layout_marginLeft="5dp"
-                android:padding="10dp"
-                />
-
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/textViewMenuID"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/goToOurSpecialistPageID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Our Specialists"
-
-                android:background="#08AFA7"
-                android:textColor="#fff"
-
-                android:padding="10dp"
-
-                />
-
-
-
-            <TextView
-                android:id="@+id/goToAboutUsPageID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="About Us"
-
-                android:background="#08AFA7"
-                android:textColor="#fff"
-                android:padding="10dp"
-                android:layout_marginLeft="5dp"
-                />
-        </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>
+
+
 
 

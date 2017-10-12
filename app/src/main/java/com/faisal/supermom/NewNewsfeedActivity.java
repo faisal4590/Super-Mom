@@ -3,11 +3,17 @@ package com.faisal.supermom;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,57 +54,7 @@ public class NewNewsfeedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_newsfeed);
 
 
-        //page links
-        beAnAweosmeMomPage = (TextView) findViewById(R.id.goToBeAnAwesomeMomPageID);
 
-        goTohealthMonitor = (TextView) findViewById(R.id.goToHealthMonitorID);
-        goToOurSpecialistPage = (TextView)findViewById(R.id.goToOurSpecialistPageID);
-        goToAboutUsPage = (TextView)findViewById(R.id.goToAboutUsPageID);
-        goToRemainderPage = (TextView)findViewById(R.id.goToRemainderID);
-
-        beAnAweosmeMomPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), NewNewsfeedActivity.class));
-            }
-        });
-
-
-
-        goTohealthMonitor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), HealthMonitorActivity.class));
-            }
-        });
-
-        goToOurSpecialistPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), OurSpecialistActivity.class));
-            }
-        });
-
-        goToAboutUsPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), AboutUsActivity.class));
-            }
-        });
-
-        goToRemainderPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), RemainderActivity.class));
-            }
-        });
-
-        //page link ends//
 
         //progress bar starts//
 
@@ -122,6 +78,63 @@ public class NewNewsfeedActivity extends AppCompatActivity {
 
 
     }
+
+    //Navigation menu code starts here//
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.forum_logout_menu, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.menu_sign_out) {
+            AuthUI.getInstance().signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(NewNewsfeedActivity.this,
+                                    "You have been signed out.",
+                                    Toast.LENGTH_LONG)
+                                    .show();
+
+                            // Close activity
+                            startActivity(new Intent(NewNewsfeedActivity.this,LoginActivity.class));
+
+                        }
+                    });
+        }
+
+        if (item.getItemId() == R.id.newsfeedMenuNewID){
+            startActivity(new Intent(NewNewsfeedActivity.this,NewNewsfeedActivity.class));
+        }
+
+        if (item.getItemId() == R.id.healthMonitorMenuNewID){
+            startActivity(new Intent(NewNewsfeedActivity.this,HealthMonitorActivity.class));
+        }
+
+        if (item.getItemId() == R.id.remainderMenuNewID){
+            startActivity(new Intent(NewNewsfeedActivity.this,RemainderActivity.class));
+        }
+
+        if (item.getItemId() == R.id.ourSpecialistsMenuNewID){
+            startActivity(new Intent(NewNewsfeedActivity.this,OurSpecialistActivity.class));
+        }
+
+        if (item.getItemId() == R.id.forumMenuNewID){
+            startActivity(new Intent(NewNewsfeedActivity.this,ForumActivity.class));
+        }
+
+        if (item.getItemId() == R.id.aboutUsMenuNewID){
+            startActivity(new Intent(NewNewsfeedActivity.this,AboutUsActivity.class));
+        }
+
+        return true;
+    }
+
+    //Navigation menu code ends here//
 
     @Override
     protected void onStart() {

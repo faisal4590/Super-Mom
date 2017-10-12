@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Add Newsfeed Info" app:showAsAction="never"
+        android:icon="@mipmap/ic_pregnant_woman_black_24dp"
+        android:id="@+id/addNewsfeedInfoMenuNewID"/>
+
+    <item android:title="Update Newsfeed Info" app:showAsAction="never"
+        android:icon="@mipmap/ic_pregnant_woman_black_24dp"
+        android:id="@+id/updateNewsfeedInfoMenuNewID"/>
+
+    <item android:title="Add Doctor Info" app:showAsAction="never"
+        android:icon="@mipmap/ic_pregnant_woman_black_24dp"
+        android:id="@+id/addDoctorInfoMenuNewID"/>
+
+    <item android:title="Update Doctor Info" app:showAsAction="never"
+        android:icon="@mipmap/ic_pregnant_woman_black_24dp"
+        android:id="@+id/updateDoctorInfoMenuNewID"/>
+
+    <item android:title="Sign out" app:showAsAction="never"
+        android:icon="@mipmap/ic_power_settings_new_black_24dp"
+        android:id="@+id/menu_sign_out"/>
+
+</menu>

@@ -12,6 +12,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
@@ -22,8 +24,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -140,39 +145,6 @@ public class AdminAddBabyInfoActivity extends AppCompatActivity {
         });
 
 
-        //go to next page code starts//
-        goToAddDoctorInfo = (TextView)findViewById(R.id.goToAddDoctorInfoPageID);
-        goToAddNewsfeedInfo = (TextView)findViewById(R.id.goToAddNewsfeedInfoPageID);
-        goToUpdateNewsfeedInfoPage = (TextView)findViewById(R.id.goToUpdateNewsfeedInfoPageID);
-        goToUpdateDoctorInfo = (TextView)findViewById(R.id.goToUpdateDoctorInfoID);
-
-        goToAddDoctorInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AdminAddDoctorActivityNew.class));
-            }
-        });
-        goToAddNewsfeedInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AdminAddBabyInfoActivity.class));
-            }
-        });
-        goToUpdateDoctorInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AdminUpdateDoctorInfoActivity.class));
-            }
-        });
-
-        goToUpdateNewsfeedInfoPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AdminUpdateNewsfeedActivity.class));
-            }
-        });
-
-        //go to next page code ends//
 
 
         //code for update baby info starts//
@@ -323,6 +295,56 @@ public class AdminAddBabyInfoActivity extends AppCompatActivity {
 
     }
 
+
+
+    //Navigation menu code starts here//
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_for_admin, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.menu_sign_out) {
+            AuthUI.getInstance().signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(AdminAddBabyInfoActivity.this,
+                                    "You have been signed out.",
+                                    Toast.LENGTH_LONG)
+                                    .show();
+
+                            // Close activity
+                            startActivity(new Intent(AdminAddBabyInfoActivity.this,LoginActivity.class));
+
+                        }
+                    });
+        }
+
+        if (item.getItemId() == R.id.addNewsfeedInfoMenuNewID){
+            startActivity(new Intent(AdminAddBabyInfoActivity.this,AdminAddBabyInfoActivity.class));
+        }
+
+        if (item.getItemId() == R.id.updateNewsfeedInfoMenuNewID){
+            startActivity(new Intent(AdminAddBabyInfoActivity.this,AdminUpdateNewsfeedActivity.class));
+        }
+
+        if (item.getItemId() == R.id.addDoctorInfoMenuNewID){
+            startActivity(new Intent(AdminAddBabyInfoActivity.this,AdminAddDoctorActivityNew.class));
+        }
+
+        if (item.getItemId() == R.id.updateDoctorInfoMenuNewID){
+            startActivity(new Intent(AdminAddBabyInfoActivity.this,AdminUpdateDoctorInfoActivity.class));
+        }
+
+        return true;
+    }
+
+    //Navigation menu code ends here//
 
 
 

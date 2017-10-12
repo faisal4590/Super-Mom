@@ -1,20 +1,29 @@
 package com.faisal.supermom;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -24,13 +33,17 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
 
     private FirebaseAuth firebaseAuth;
 
-    private Button btnLogOut;
+    private Button btnLogOut,saveNewBabyInfoBtn;
     private TextView textViewWelcome;
+
+    private EditText newBabyNameEditText;
+    //database reference
+    DatabaseReference databaseNewBabyInfoReference;
 
     //next page variables//
 
     private TextView beAnAweosmeMomPage,goTohealthMonitor,goToOurSpecialistPage,
-    goToAboutUsPage,goToRemainderPage;
+    goToAboutUsPage,goToRemainderPage,goToForumPage;
 
 
 
@@ -57,57 +70,10 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         //database ref..
         databaseBabyInfoReference = FirebaseDatabase.getInstance().getReference("babyInfo");
 
-        //page links
-        beAnAweosmeMomPage = (TextView) findViewById(R.id.goToBeAnAwesomeMomPageID);
-
-        goTohealthMonitor = (TextView) findViewById(R.id.goToHealthMonitorID);
-        goToOurSpecialistPage = (TextView)findViewById(R.id.goToOurSpecialistPageID);
-        goToAboutUsPage = (TextView)findViewById(R.id.goToAboutUsPageID);
-        goToRemainderPage = (TextView)findViewById(R.id.goToRemainderID);
-
-        beAnAweosmeMomPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), NewNewsfeedActivity.class));
-            }
-        });
+        databaseNewBabyInfoReference = FirebaseDatabase.getInstance().getReference("newBabyInfo");
+        //baby info name er new 1ta tree ke referrence hisabe nibe.. nahole root ke reference hisabe nito
 
 
-
-        goTohealthMonitor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), HealthMonitorActivity.class));
-            }
-        });
-
-        goToOurSpecialistPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), OurSpecialistActivity.class));
-            }
-        });
-
-        goToAboutUsPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), NewAboutUsActivity.class));
-            }
-        });
-
-        goToRemainderPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), RemainderActivity.class));
-            }
-        });
-
-        //page link ends//
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -123,6 +89,8 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
 
         textViewWelcome = (TextView) findViewById(R.id.welcome);
         textViewWelcome.setText("Welcome "+ user.getEmail());
+
+        newBabyNameEditText = (EditText)findViewById(R.id.newBabyNameEditTextID);
 
         btnLogOut = (Button) findViewById(R.id.logOut);
 
@@ -152,7 +120,74 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
 
         //calling the datepicker function//
         showDialogOnButtonClicked();
+
+        /*saveNewBabyInfoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNewBabyInfo();
+            }
+        });*/
+
+        //code for notification starts here//
+
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.SECOND,5);//ami chai 5 sec por notification ashbe
+
+        Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
+
+        notificationIntent.addCategory("android.intent.category.DEFAULT");
+
+        PendingIntent broadcast = PendingIntent.getBroadcast(this,100,notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),broadcast);
+
+        //code for notification ends here//
+
     }
+
+
+    private void addNewBabyInfo(){
+        //code for adding baby info into firebase starts//
+        String babyName,birthDate,birthMonth,birthYear;
+        babyName = newBabyNameEditText.getText().toString();
+
+        if(TextUtils.isEmpty(babyName)){
+            Toast.makeText(getApplicationContext(),"Please fill up the field",Toast.LENGTH_SHORT).show();
+        }
+        else{
+
+            String ID = databaseNewBabyInfoReference.push().getKey();
+            String yearString = Integer.toString(year);
+            String monthString = Integer.toString(month);
+            String dayString = Integer.toString(day);
+            NewBabyInfoProfileClass babyInfoObj = new NewBabyInfoProfileClass(ID,babyName,dayString,monthString,yearString);
+            databaseNewBabyInfoReference.child(ID).setValue(babyInfoObj);
+
+            Toast.makeText(getApplicationContext(),"Baby Info added",Toast.LENGTH_LONG).show();
+
+            //code for adding baby info into firebase ends//
+
+
+        }
+    }
+
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener(){
+        public void onDateSet(DatePicker view, int years, int monthOfYear, int dayOfYear){
+            year = years;
+            month = monthOfYear + 1;//month 0 die start hoy. tai real month number pawar jonno 1 increment korci
+            day = dayOfYear;
+            Toast.makeText(getApplicationContext(),year + " / " + month + " / " + day ,Toast.LENGTH_SHORT).show();
+
+
+            addNewBabyInfo();
+
+
+
+        }
+    };
 
     public void showDialogOnButtonClicked(){
         birthdatePicker = (Button)findViewById(R.id.birthday);
@@ -173,20 +208,62 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
+    //Navigation menu code starts here//
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.forum_logout_menu, menu);
+        return true;
+    }
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //navigation bar er kono item e tap korle ki hobe tar code ekhane likhbo..
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)){
-            //uporer bam er navigation bar er upor click korle menu expand hobe..
-            return true;
+        if(item.getItemId() == R.id.menu_sign_out) {
+            AuthUI.getInstance().signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(HomePageActivity.this,
+                                    "You have been signed out.",
+                                    Toast.LENGTH_LONG)
+                                    .show();
+
+                            // Close activity
+                            startActivity(new Intent(HomePageActivity.this,LoginActivity.class));
+
+                        }
+                    });
         }
 
+        if (item.getItemId() == R.id.newsfeedMenuNewID){
+            startActivity(new Intent(HomePageActivity.this,NewNewsfeedActivity.class));
+        }
 
-        return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.healthMonitorMenuNewID){
+            startActivity(new Intent(HomePageActivity.this,HealthMonitorActivity.class));
+        }
+
+        if (item.getItemId() == R.id.remainderMenuNewID){
+            startActivity(new Intent(HomePageActivity.this,RemainderActivity.class));
+        }
+
+        if (item.getItemId() == R.id.ourSpecialistsMenuNewID){
+            startActivity(new Intent(HomePageActivity.this,OurSpecialistActivity.class));
+        }
+
+        if (item.getItemId() == R.id.forumMenuNewID){
+            startActivity(new Intent(HomePageActivity.this,ForumActivity.class));
+        }
+
+        if (item.getItemId() == R.id.aboutUsMenuNewID){
+            startActivity(new Intent(HomePageActivity.this,AboutUsActivity.class));
+        }
+
+        return true;
     }
+
+    //Navigation menu code ends here//
 
     @Override
     public void onClick(View view) {
@@ -201,13 +278,6 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener(){
-        public void onDateSet(DatePicker view, int years, int monthOfYear, int dayOfYear){
-            year = years;
-            month = monthOfYear + 1;//month 0 die start hoy. tai real month number pawar jonno 1 increment korci
-            day = dayOfYear;
-            Toast.makeText(getApplicationContext(),year + " / " + month + " / " + day ,Toast.LENGTH_SHORT).show();
-        }
-    };
+
 }
 

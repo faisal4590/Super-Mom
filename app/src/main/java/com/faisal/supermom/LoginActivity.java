@@ -97,7 +97,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                             if(email.equalsIgnoreCase("admin@gmail.com")){
                                 startActivity(new Intent(getApplicationContext(),AdminAddBabyInfoActivity.class));
-
                             }
                             else{
                                 //Toast.makeText(LoginActivity.this, "Username is : "+ user.getEmail(), Toast.LENGTH_LONG).show();

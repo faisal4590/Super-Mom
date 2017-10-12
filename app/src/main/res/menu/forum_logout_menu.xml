@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Newsfeed" app:showAsAction="never"
+        android:icon="@mipmap/ic_pregnant_woman_black_24dp"
+        android:id="@+id/newsfeedMenuNewID"/>
+
+    <item android:title="Health Monitor" app:showAsAction="never"
+        android:icon="@mipmap/ic_add_alert_black_24dp"
+        android:id="@+id/healthMonitorMenuNewID"/>
+
+    <item android:title="Remainder" app:showAsAction="never"
+        android:icon="@mipmap/ic_favorite_black_24dp"
+        android:id="@+id/remainderMenuNewID"/>
+
+    <item android:title="Our Specialists" app:showAsAction="never"
+        android:icon="@mipmap/ic_record_voice_over_black_24dp"
+        android:id="@+id/ourSpecialistsMenuNewID"/>
+
+    <item android:title="Forum" app:showAsAction="never"
+        android:icon="@mipmap/ic_view_list_black_24dp"
+        android:id="@+id/forumMenuNewID"/>
+
+    <item android:title="About Us" app:showAsAction="never"
+        android:icon="@mipmap/ic_announcement_black_24dp"
+        android:id="@+id/aboutUsMenuNewID"/>
+
+    <item android:title="Sign out" app:showAsAction="never"
+        android:icon="@mipmap/ic_power_settings_new_black_24dp"
+        android:id="@+id/menu_sign_out"/>
+
+
+
+</menu>

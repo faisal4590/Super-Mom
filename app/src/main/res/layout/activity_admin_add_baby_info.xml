@@ -141,110 +141,16 @@
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/processSaveBabyInfoBtnID"
-        android:id="@+id/menuForAdminID"
-        android:layout_marginTop="5dp"
-        >
 
-        <TextView
-            android:id="@+id/goToAddNewsfeedInfoPageID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Newsfeed info"
-
-
-            android:background="#DE5448"
-            android:textColor="@color/colorwhite"
-            android:padding="10dp"
-            android:textStyle="bold"
-            android:textSize="14dp"
-
-            android:layout_marginLeft="50dp"
-
-            />
-
-        <TextView
-            android:id="@+id/goToAddDoctorInfoPageID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Doctor Info"
-
-
-
-            android:background="#DE5448"
-            android:textColor="@color/colorwhite"
-            android:padding="10dp"
-            android:textStyle="bold"
-            android:textSize="14dp"
-
-            android:layout_marginLeft="50dp"
-
-            />
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:orientation="horizontal"
-        android:id="@+id/menuForAdmin2ID"
-        android:layout_marginTop="3dp"
-
-
-        android:layout_below="@+id/menuForAdminID"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="36dp"
-        android:weightSum="1">
-
-        <TextView
-            android:id="@+id/goToUpdateNewsfeedInfoPageID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Update newsfeed"
-
-
-            android:background="#DE5448"
-            android:textColor="@color/colorwhite"
-            android:padding="10dp"
-            android:textStyle="bold"
-            android:textSize="14dp"
-
-            android:layout_marginLeft="50dp"
-
-            />
-
-
-        <TextView
-            android:id="@+id/goToUpdateDoctorInfoID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-
-
-            android:background="#DE5448"
-            android:padding="10dp"
-            android:text="Update Doctor"
-            android:textColor="@color/colorwhite"
-            android:textSize="14dp"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
 
 
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/menuForAdmin2ID"
+        android:layout_below="@+id/processSaveBabyInfoBtnID"
         android:id="@+id/showBabyInfoListID"
+        android:layout_marginTop="2000dp"
         >
 
 
