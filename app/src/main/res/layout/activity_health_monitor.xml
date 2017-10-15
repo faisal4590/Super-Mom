@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.HealthMonitorActivity"
     android:background="@drawable/health_monitor_bg"
+    android:padding="10dp"
 
     >
 
@@ -23,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="@string/child_info"
+
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -30,6 +32,8 @@
 
             android:fontFamily="cursive"
             android:textSize="30dp"
+
+            android:layout_marginBottom="30dp"
 
             />
 
@@ -44,6 +48,7 @@
         android:id="@+id/healthMonitorChildAgeID"
         android:layout_below="@+id/healthMonitorHeadlineID"
         android:layout_marginBottom="10dp"
+
         >
 
 
@@ -52,8 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/child_age"
-            android:textColor="#FFE793"
-            android:textSize="16sp"
+            android:textColor="#DC322F"
+            android:textSize="20sp"
             />
 
         <EditText
@@ -83,8 +88,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Child Height : "
-            android:textColor="#FFE793"
-            android:textSize="16sp"
+            android:textColor="#DC322F"
+            android:textSize="20sp"
 
             />
 
@@ -115,8 +120,8 @@
 
             android:text="Child Weight : "
 
-            android:textColor="#FFE793"
-            android:textSize="16sp"
+            android:textColor="#DC322F"
+            android:textSize="20sp"
             />
 
 
@@ -151,8 +156,8 @@
             android:layout_height="wrap_content"
             android:text="Child Gender"
 
-            android:textColor="#FFE793"
-            android:textSize="16sp"
+            android:textColor="#DC322F"
+            android:textSize="20sp"
             />
 
         <Spinner
@@ -174,17 +179,15 @@
         android:id="@+id/showHealthReportForHealthMonitorID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/healthMonitorChildWeightID"
-        android:layout_marginTop="28dp"
         android:text="@string/show_health_report"
         android:background="@drawable/button_circle_radius"
         android:textColor="#ffff"
         android:padding="10dp"
+        android:layout_marginTop="10dp"
 
 
-
-        />
+        android:layout_below="@+id/healthMonitorChildGenderID"
+        android:layout_alignParentEnd="true" />
 
 
 

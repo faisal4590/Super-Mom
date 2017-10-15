@@ -6,7 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.AdminUpdateDoctorInfoActivity"
 
-    android:background="@drawable/admin_update_doctor_bg"
+    android:background="@drawable/update_doc_info2_new_bg"
+
+    android:padding="10dp"
+
+
 
     >
 
@@ -17,9 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/menuForAdmin2ID"
+
         android:layout_marginTop="10dp"
         android:id="@+id/textNewsfeed"
+
 
 
         >
@@ -29,17 +34,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:text="Update Newsfeed"
+            android:text="Update doctor info"
             android:textColor="@color/colorwhite"
             android:textAlignment="center"
             android:fontFamily="cursive"
-            android:textSize="30dp"
+            android:textSize="40dp"
             android:textStyle="bold"
 
             />
 
 
     </LinearLayout>
+
+
 
 
 
@@ -50,6 +57,8 @@
 
         android:layout_below="@+id/textNewsfeed"
         />
+
+
 
 
 

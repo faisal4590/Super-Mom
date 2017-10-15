@@ -51,6 +51,9 @@ public class AdminUpdateNewsfeedActivity extends AppCompatActivity {
 
 
 
+
+
+
         //database reference
         databaseReferenceNewsfeedInfo = FirebaseDatabase.getInstance().getReference("babyInfo");
 
@@ -127,6 +130,10 @@ public class AdminUpdateNewsfeedActivity extends AppCompatActivity {
             startActivity(new Intent(AdminUpdateNewsfeedActivity.this,AdminUpdateDoctorInfoActivity.class));
         }
 
+        if (item.getItemId() == R.id.addVaccineInfoNotificationInfoMenuNewID){
+            startActivity(new Intent(AdminUpdateNewsfeedActivity.this,AdminAddNotificationActivity.class));
+        }
+
         return true;
     }
 
@@ -191,6 +198,13 @@ public class AdminUpdateNewsfeedActivity extends AppCompatActivity {
         });
 
 
+
+        listViewNewsfeedInfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),"Press and hold any item to update",Toast.LENGTH_LONG).show();
+            }
+        });
 
 
     }

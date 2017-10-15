@@ -39,15 +39,16 @@ public class AdminUpdateDoctorInfoActivity extends AppCompatActivity {
 
     List<DoctorClassNew> doctorInfoListNew;
 
+
     //next page links//
     private TextView goToUpdateNewsfeedInfoPage, goToAddDoctorInfo, goToAddNewsfeedInfo, goToUpdateDoctorInfo;
 
+    ListView pressMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_update_doctor_info);
-
 
 
         //database reference
@@ -81,8 +82,16 @@ public class AdminUpdateDoctorInfoActivity extends AppCompatActivity {
         //code for update baby info ends//
 
 
+        listViewDoctorInfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),"Press and hold any item to update",Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
+
+
 
     //Navigation menu code starts here//
 
@@ -126,6 +135,10 @@ public class AdminUpdateDoctorInfoActivity extends AppCompatActivity {
 
         if (item.getItemId() == R.id.updateDoctorInfoMenuNewID){
             startActivity(new Intent(AdminUpdateDoctorInfoActivity.this,AdminUpdateDoctorInfoActivity.class));
+        }
+
+        if (item.getItemId() == R.id.addVaccineInfoNotificationInfoMenuNewID){
+            startActivity(new Intent(AdminUpdateDoctorInfoActivity.this,AdminAddNotificationActivity.class));
         }
 
         return true;

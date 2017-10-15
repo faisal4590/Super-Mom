@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.faisal.supermom.ForumActivity"
-    android:background="@drawable/forum_bg"
+    android:background="@drawable/forum_bg1_new"
     >
 
     <android.support.design.widget.FloatingActionButton

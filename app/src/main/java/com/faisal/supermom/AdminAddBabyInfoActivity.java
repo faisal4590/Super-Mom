@@ -132,17 +132,6 @@ public class AdminAddBabyInfoActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        btnLogOut = (TextView) findViewById(R.id.logOut);
-
-        btnLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                firebaseAuth.signOut();
-                finish();//finishing the current activity
-
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-            }
-        });
 
 
 
@@ -328,6 +317,9 @@ public class AdminAddBabyInfoActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.addNewsfeedInfoMenuNewID){
             startActivity(new Intent(AdminAddBabyInfoActivity.this,AdminAddBabyInfoActivity.class));
         }
+        if (item.getItemId() == R.id.addHealthInfoInfoMenuNewID){
+            startActivity(new Intent(AdminAddBabyInfoActivity.this,AdminAddHealthMonitorInfoActivity.class));
+        }
 
         if (item.getItemId() == R.id.updateNewsfeedInfoMenuNewID){
             startActivity(new Intent(AdminAddBabyInfoActivity.this,AdminUpdateNewsfeedActivity.class));
@@ -339,6 +331,10 @@ public class AdminAddBabyInfoActivity extends AppCompatActivity {
 
         if (item.getItemId() == R.id.updateDoctorInfoMenuNewID){
             startActivity(new Intent(AdminAddBabyInfoActivity.this,AdminUpdateDoctorInfoActivity.class));
+        }
+
+        if (item.getItemId() == R.id.addVaccineInfoNotificationInfoMenuNewID){
+            startActivity(new Intent(AdminAddBabyInfoActivity.this,AdminAddNotificationActivity.class));
         }
 
         return true;

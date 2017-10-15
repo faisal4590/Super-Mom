@@ -92,11 +92,11 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
 
         newBabyNameEditText = (EditText)findViewById(R.id.newBabyNameEditTextID);
 
-        btnLogOut = (Button) findViewById(R.id.logOut);
 
 
 
-        btnLogOut.setOnClickListener(this);
+
+        //btnLogOut.setOnClickListener(this);
 
 
         //drawer layout code starts//

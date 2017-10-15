@@ -1,11 +1,14 @@
 package com.faisal.supermom;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +41,8 @@ public class OurSpecialistActivity extends AppCompatActivity {
     private TextView beAnAweosmeMomPage,goTohealthMonitor,goToOurSpecialistPage,
             goToAboutUsPage,goToRemainderPage;
 
+    Button makeTheCall;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +55,20 @@ public class OurSpecialistActivity extends AppCompatActivity {
 
         listViewDoctorInfoNew = (ListView)findViewById(R.id.showDoctorInfoListID);
         doctorInfoListNew = new ArrayList<>();
+
+
+
+        makeTheCall = (Button)findViewById(R.id.callDocID);
+        makeTheCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phone = "01521201537";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 

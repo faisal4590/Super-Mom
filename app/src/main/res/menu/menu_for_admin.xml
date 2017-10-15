@@ -18,6 +18,14 @@
         android:icon="@mipmap/ic_pregnant_woman_black_24dp"
         android:id="@+id/updateDoctorInfoMenuNewID"/>
 
+    <item android:title="Add Vaccine Info" app:showAsAction="never"
+        android:icon="@mipmap/ic_pregnant_woman_black_24dp"
+        android:id="@+id/addVaccineInfoNotificationInfoMenuNewID"/>
+
+    <item android:title="Add Child health Info" app:showAsAction="never"
+        android:icon="@mipmap/ic_pregnant_woman_black_24dp"
+        android:id="@+id/addHealthInfoInfoMenuNewID"/>
+
     <item android:title="Sign out" app:showAsAction="never"
         android:icon="@mipmap/ic_power_settings_new_black_24dp"
         android:id="@+id/menu_sign_out"/>

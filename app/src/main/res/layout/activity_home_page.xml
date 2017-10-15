@@ -7,6 +7,7 @@
     tools:context="com.faisal.supermom.HomePageActivity"
     android:id="@+id/drawerLayout"
     android:background="@drawable/homepage_bg2"
+    android:padding="10dp"
     >
 
 
@@ -29,6 +30,7 @@
             android:textColor="@color/colorwhite"
             android:fontFamily="cursive"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textStyle="bold"
 
             />
 
@@ -92,25 +94,6 @@
 
 
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:id="@+id/logOut"
-            android:layout_below="@+id/birthday"
-
-            android:layout_marginTop="20dp"
-
-            android:background="@drawable/button_circle_radius"
-
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textColor="#fff"
-
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-
-
-            />
 
 
     </RelativeLayout>

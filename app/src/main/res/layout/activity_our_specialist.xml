@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.OurSpecialistActivity"
 
-    android:background="@drawable/our_specialists_bg1"
+    android:background="@drawable/our_specialists_bg1_new"
+    android:padding="10dp"
 
     >
 
@@ -17,17 +18,33 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="19dp"
         android:text="Our Specialists"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textColor="@color/colorwhite"
         android:fontFamily="cursive"
         android:textSize="40dp"
+        android:textStyle="bold"
+
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:background="@drawable/button_circle_radius"
+        android:text="Call now"
+        android:textColor="@color/colorwhite"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:id="@+id/callDocID"
+
 
         />
+
+
 
 
 
@@ -38,6 +55,8 @@
         android:layout_below="@+id/textViewMenuID"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp" />
+
+
 
 
 

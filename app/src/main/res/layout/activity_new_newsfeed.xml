@@ -6,6 +6,8 @@
     tools:context="com.faisal.supermom.BeAnAwesomeMomActivity"
     android:background="@drawable/newsfeed_bg"
 
+    android:padding="10dp"
+
     >
 
 
@@ -30,7 +32,6 @@
         android:id="@+id/newShowBabyInfoListID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textViewMenuID"
         android:layout_centerHorizontal="true"
 
         android:layout_marginTop="50dp"

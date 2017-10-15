@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.BeAnAwesomeMomActivity"
     android:background="#00B0FF"
+    android:padding="8dp"
     >
 
 

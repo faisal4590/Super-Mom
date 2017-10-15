@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.AdminAddBabyInfoActivity"
 
-    android:background="@drawable/admin_newsfeed_bg1"
+    android:background="@drawable/admin_add_baby_info_new1"
 
+    android:padding="10dp"
     >
 
 
@@ -15,17 +16,15 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="18dp"
         android:text="@string/newsfeed"
         android:padding="5dp"
         android:textAlignment="center"
         android:fontFamily="cursive"
         android:textColor="@color/colorwhite"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textStyle="bold"
-        />
+         />
 
     <TextView
         android:id="@+id/infoHeadline"
@@ -35,12 +34,12 @@
         android:text="@string/addInformationHeadline"
         android:layout_below="@+id/textView2"
         android:layout_alignParentStart="true"
-        android:padding="5dp"
         android:textAlignment="center"
 
-        android:textColor="@color/colororange1"
+        android:textColor="@color/colorwhite"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
+        android:textSize="18sp"
 
 
         />
@@ -57,6 +56,7 @@
         android:padding="5dp"
         android:textColor="@color/colorwhite"
         android:textColorHint="@color/colorwhite"
+
         />
 
     <TextView
@@ -68,8 +68,9 @@
         android:layout_marginTop="15dp"
         android:text="@string/add_info"
 
-        android:textColor="@color/colororange1"
+        android:textColor="@color/colorwhite"
         android:textStyle="bold"
+        android:textSize="18sp"
 
         />
 
@@ -103,7 +104,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="160dp"
         android:id="@+id/adminShowImageWhenPickedID"
 
 
@@ -156,18 +157,7 @@
 
     </ListView>
 
-    <TextView
-        android:id="@+id/logOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/textView2"
-        android:text="Logout"
 
-        android:textColor="@color/colorwhite"
-        android:background="@drawable/button_circle_radius"
-        android:padding="8dp"
-        />
 
 
 </RelativeLayout>

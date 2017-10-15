@@ -160,6 +160,13 @@ public class AdminAddDoctorActivityNew extends AppCompatActivity {
         if (item.getItemId() == R.id.updateDoctorInfoMenuNewID){
             startActivity(new Intent(AdminAddDoctorActivityNew.this,AdminUpdateDoctorInfoActivity.class));
         }
+        if (item.getItemId() == R.id.addVaccineInfoNotificationInfoMenuNewID){
+            startActivity(new Intent(AdminAddDoctorActivityNew.this,AdminAddNotificationActivity.class));
+        }
+
+        if (item.getItemId() == R.id.addHealthInfoInfoMenuNewID){
+            startActivity(new Intent(AdminAddDoctorActivityNew.this,AdminAddHealthMonitorInfoActivity.class));
+        }
 
         return true;
     }

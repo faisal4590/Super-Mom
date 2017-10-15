@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.faisal.supermom.LoginActivity"
-    android:background="@drawable/login2_bg"
+    android:background="@drawable/login_new2_bg"
+    android:padding="10dp"
     >
 
     <TextView
@@ -19,7 +20,7 @@
         android:layout_marginBottom="27dp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        android:textColor="#81BCFF"
+        android:textColor="@color/colorwhite"
 
         android:fontFamily="cursive"
 
@@ -43,8 +44,8 @@
             android:id="@+id/emailIDSignIn"
             android:inputType="textEmailAddress"
             android:textAlignment="center"
-            android:textColorHint="#29B6F6"
-            android:textColor="#29B6F6"
+            android:textColorHint="@color/colorwhite"
+            android:textColor="@color/colorwhite"
             />
         <EditText
             android:layout_margin="10dp"
@@ -54,8 +55,8 @@
             android:id="@+id/passwordIDSignIn"
             android:textAlignment="center"
             android:inputType="textPassword"
-            android:textColorHint="#29B6F6"
-            android:textColor="#29B6F6"
+            android:textColorHint="@color/colorwhite"
+            android:textColor="@color/colorwhite"
             />
 
         <Button
