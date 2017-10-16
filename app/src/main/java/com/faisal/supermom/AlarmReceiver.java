@@ -20,15 +20,15 @@ public class AlarmReceiver extends BroadcastReceiver {
         Intent notificationIntent = new Intent(context, RemainderActivity.class);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-        stackBuilder.addParentStack(RemainderActivity.class);
+        stackBuilder.addParentStack(AdminAddNotificationActivity.class);
         stackBuilder.addNextIntent(notificationIntent);
 
         PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
 
-        Notification notification = builder.setContentTitle("Demo App Notification")
-                .setContentText("New Notification From Demo App..")
+        Notification notification = builder.setContentTitle("New vaccine campaign info")
+                .setContentText("New vaccine campaign location is added...")
                 .setTicker("New Message Alert!")
                 .setSmallIcon(R.drawable.ic_menu_share)
                 .setContentIntent(pendingIntent).build();

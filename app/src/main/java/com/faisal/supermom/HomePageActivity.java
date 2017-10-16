@@ -128,23 +128,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
             }
         });*/
 
-        //code for notification starts here//
 
-        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.SECOND,5);//ami chai 5 sec por notification ashbe
-
-        Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
-
-        notificationIntent.addCategory("android.intent.category.DEFAULT");
-
-        PendingIntent broadcast = PendingIntent.getBroadcast(this,100,notificationIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
-
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),broadcast);
-
-        //code for notification ends here//
 
     }
 

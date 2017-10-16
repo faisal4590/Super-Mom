@@ -1,6 +1,9 @@
 package com.faisal.supermom;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -123,11 +126,29 @@ public class AdminAddNotificationActivity extends AppCompatActivity {
             String IDVar = databaseVaccineNotificationReference.push().getKey();
             AdminAddVaccineInfoClass vaccineInfoObj = new AdminAddVaccineInfoClass(IDVar,vaccineLocationVar
                     ,vaccineDetailsVar,vaccineAvailableForVar);
-            //databaseVaccineNotificationReference.child(IDVar).setValue(vaccineInfoObj);
+            databaseVaccineNotificationReference.child(IDVar).setValue(vaccineInfoObj);
 
-            databaseVaccineNotificationReference.setValue(vaccineInfoObj);
+            //databaseVaccineNotificationReference.setValue(vaccineInfoObj);
 
             Toast.makeText(getApplicationContext(),"Vaccine info added",Toast.LENGTH_LONG).show();
+
+            //code for notification starts here//
+
+            AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.SECOND,1);//ami chai 5 sec por notification ashbe
+
+            Intent notificationIntent = new Intent("android.media.action.DISPLAY_NOTIFICATION");
+
+            notificationIntent.addCategory("android.intent.category.DEFAULT");
+
+            PendingIntent broadcast = PendingIntent.getBroadcast(this,100,notificationIntent,
+                    PendingIntent.FLAG_UPDATE_CURRENT);
+
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),broadcast);
+
+            //code for notification ends here//
 
 
 

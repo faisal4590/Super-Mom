@@ -88,9 +88,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private void registerUser() {
 
-        String emailStr = email.getText().toString().trim();
+        final String emailStr = email.getText().toString().trim();
         String passwordStr = password.getText().toString().trim();
         String confirmPasswordStr = confirmPassword.getText().toString().trim();
+
+        final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        // onClick of button perform this simplest code.
+        if (!emailStr.matches(emailPattern))
+        {
+            Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         if (TextUtils.isEmpty(emailStr)) {
             //checking wheather the email is empty or not
